@@ -1,0 +1,28 @@
+{
+  "name": "qotd-bot",
+  "version": "1.0.0",
+  "description": "A node.js discord bot built using the discord.js library, designed to implement QOTD functionality to your server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidovski/qotd-bot.git"
+  },
+  "keywords": [
+    "discord.js",
+    "discord",
+    "node.js",
+    "qotd"
+  ],
+  "author": "Peel Paradise",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidovski/qotd-bot/issues"
+  },
+  "homepage": "https://github.com/davidovski/qotd-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
