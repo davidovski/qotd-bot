@@ -1,5 +1,3 @@
-# qotd-bot
-
 A node.js discord bot built using the discord.js library, designed to implement QOTD functionality to your server
 
 ## Setup
