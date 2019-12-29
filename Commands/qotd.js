@@ -1,12 +1,11 @@
 const fs = require('fs');
+const Discord = require("discord.js");
 
 fetchDataFile = async (serverid, callback) => {
     fs.readFile(`data/${serverid}.json`, {encoding: 'utf-8'}, function(err,data){
         if (!err) {
-            console.log('received data: ' + data);
             callback(JSON.parse(data));
         } else {
-            console.log(err);
             callback({});
         }
     });
@@ -37,18 +36,12 @@ sendQOTD = (data, client, message) => {
             mention = `<@&${data.pingrole}`
         }
         
-        
-        const exampleEmbed = {
-            color: '#0099ff',
-            title: 'QOTD',
-            description: data.queue[0].content,
-            footer: {
-                text: data.user
-            }
-        }
+        var embed = new Discord.RichEmbed()
+            .setTitle('QOTD')
+            .setDescription(data.queue[0].content)
+            .setColor('#0099ff');
+        channel.sendEmbed(embed, mention).catch(() => {});
 
-        
-        channel.sendEmbed(exampleEmbed, mention).catch(() => {});
         data.queue.shift()
     }
 }
