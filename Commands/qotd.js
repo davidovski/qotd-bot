@@ -92,16 +92,15 @@ const subcmds = {
             for (i = 1; i < args.length; i++) {
                 content += args[i] + " "
             }
-            console.log(content)
-                if (!("queue" in data)) {
-                    data.queue = []
-                }
-                 data.queue.push({
-                    "content" : content,
-                    "user" : message.author.id
-                });
-                saveDataFile(serverid, data)
-                message.channel.send("added!").catch(() => {});
+            if (!("queue" in data)) {
+                data.queue = []
+            }
+             data.queue.push({
+                "content" : content,
+                "user" : message.author.id
+            });
+            saveDataFile(serverid, data)
+            message.channel.send("added!").catch(() => {});
 
     },
     "send": async (client, message, args, data) => {
